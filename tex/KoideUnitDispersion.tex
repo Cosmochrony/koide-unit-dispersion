@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{doi}
+
+% Map fi/ffi/fl ligature glyphs to Unicode so PDF full-text extraction (Zenodo indexing) is correct.
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\CV}{\operatorname{CV}}
+\newcommand{\rl}{r_{\ell}}
+\newcommand{\Cgen}{\mathbb{C}^{3}_{\mathrm{gen}}}
+\newcommand{\SPi}{S_{\Pi}}
+
+\title{The Charged-Lepton Koide Relation as a Unit-Dispersion Constraint}
+
+\author{J. Beau\\
+Independent Researcher, France\\
+\texttt{jerome.beau@cosmochrony.org}}
+
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    We record a scale-free reformulation of the charged-lepton Koide relation.
+    Writing the square-root mass vector $\rl = (\sqrt{m_e}, \sqrt{m_\mu}, \sqrt{m_\tau})$ with mean $\bar r$ and
+    standard deviation $\sigma_r$, the Koide quotient is exactly
+    $Q_\ell = (1 + \CV(\rl)^2)/3$ with $\CV(\rl) = \sigma_r/\bar r$, so that
+    $Q_\ell = 2/3 \iff \CV(\rl) = 1 \iff \sigma_r = \bar r$: the square-root masses have unit relative dispersion.
+    This isolates the intrinsic shape content of Koide as a single dimensionless number and separates it cleanly
+    from the mass hierarchy, which is fixed independently by the placement of one generation near a node of the
+    square-root profile.
+    We record two structural consequences for the Cosmochrony fermionic sub-programme.
+    First, the specific cascade ladder $(1, \tfrac12 + u, \tfrac12 - u)$ that carries the projected generation
+    levels has a bounded dispersion, $\CV \le 1/\sqrt2$ and $Q \le 1/2$, so it cannot by itself realise the Koide
+    value.
+    Second, $\CV(\rl) = 1$ is the coefficient of variation of the maximum-entropy positive variable at fixed mean;
+    whether the projection entropy $\SPi$ induces such a variational principle on the square-root mass observable
+    is stated as a sharp, falsifiable open test.
+    This note does not derive the masses: it fixes a target invariant for the fermionic-mass sector.
+  \end{abstract}
+
+  \noindent\textbf{Keywords:}
+  Koide relation; charged-lepton masses; coefficient of variation; unit dispersion; square-root mass vector;
+  projective cascade; maximum entropy; projection entropy; fermionic mass target.
+
+  \newpage
+
+  \tableofcontents
+
+  \newpage
+
+  \section{Position and purpose}
+    \label{sec:position}
+
+    The charged-lepton mass sector of the Cosmochrony fermionic sub-programme is not derived: the projected Yukawa
+    line fixes a generation-level structure, but the mass values and the mixing remain downstream open
+    data~\cite{Beau2026pyl, Beau2026pyo}.
+    In that setting it is useful to state the phenomenological target in the sharpest possible form, so that a
+    later mechanism can be tested against a single scale-free invariant rather than against the raw mass ratios.
+    The Koide relation is the natural candidate: it is dimensionless, three-generational, and formulated in the
+    square-root masses.
+    This note recasts it as a unit coefficient-of-variation condition, separates the resulting dispersion
+    statement from the hierarchy, records the obstruction it poses to the projected cascade ladder, and isolates a
+    maximum-entropy reading as the open structural test.
+    The purpose is reconnaissance and bookkeeping, not derivation: the result is a target invariant, not a mass
+    formula.
+
+  \section{Koide as a unit coefficient of variation}
+    \label{sec:cv}
+
+    Let $\rl = (\sqrt{m_e}, \sqrt{m_\mu}, \sqrt{m_\tau})$, and write $\mathbf 1 = (1,1,1)$.
+    The Koide quotient is
+    \begin{equation}
+      \label{eq:koide}
+      Q_\ell
+      = \frac{m_e + m_\mu + m_\tau}{(\sqrt{m_e} + \sqrt{m_\mu} + \sqrt{m_\tau})^2}
+      = \frac{\lVert \rl \rVert^2}{\langle \rl, \mathbf 1 \rangle^2}.
+    \end{equation}
+
+    \begin{proposition}[Koide as unit dispersion]
+      \label{prop:cv}
+      Let $\bar r = \tfrac13 \sum_g r_g$ and $\sigma_r^2 = \tfrac13 \sum_g (r_g - \bar r)^2$ be the mean and
+      population variance of the three components of $\rl$, and $\CV(\rl) = \sigma_r/\bar r$.
+      Then
+      \begin{equation}
+        \label{eq:cv-identity}
+        Q_\ell = \frac{1 + \CV(\rl)^2}{3},
+      \end{equation}
+      and consequently
+      \begin{equation}
+        \label{eq:cv-unit}
+        Q_\ell = \frac23 \quad\Longleftrightarrow\quad \CV(\rl) = 1 \quad\Longleftrightarrow\quad \sigma_r = \bar r.
+      \end{equation}
+    \end{proposition}
+
+    \begin{proof}
+      With three components, $\lVert \rl \rVert^2 = \sum_g r_g^2 = 3(\bar r^2 + \sigma_r^2)$ and
+      $\langle \rl, \mathbf 1 \rangle = \sum_g r_g = 3 \bar r$, so $\langle \rl, \mathbf 1 \rangle^2 = 9 \bar r^2$.
+      Substituting into~\eqref{eq:koide} gives
+      $Q_\ell = 3(\bar r^2 + \sigma_r^2)/(9 \bar r^2) = (1 + \sigma_r^2/\bar r^2)/3 = (1 + \CV(\rl)^2)/3$, which
+      is~\eqref{eq:cv-identity}.
+      Setting this equal to $2/3$ gives $\CV(\rl)^2 = 1$, hence~\eqref{eq:cv-unit}.
+    \end{proof}
+
+    Numerically, with the pole-mass square roots $\rl = (0.715, 10.28, 42.15)$ (in $\mathrm{MeV}^{1/2}$), one finds
+    $\bar r = 17.716$, $\sigma_r = 17.715$, hence $\CV(\rl) = 0.99999$ and $Q_\ell = 0.666661$.
+    The charged-lepton square-root mass vector has unit relative dispersion to five digits.
+    Equation~\eqref{eq:cv-unit} is the sharpest scale-free statement of the relation: rather than ``why $3477$'' or
+    ``why $45^\circ$'', the content is that the standard deviation of the square-root masses equals their mean.
+    The value $Q_\ell$ is monotone in $\CV$ across the admissible interval $\CV \in [0, \sqrt2]$: $\CV = 0$ is the
+    degenerate limit ($Q = 1/3$), $\CV = \sqrt2$ is the one-mass-dominant limit ($Q = 1$), and $\CV = 1$ is the
+    Koide midpoint ($Q = 2/3$).
+
+  \section{Separation between dispersion and hierarchy}
+    \label{sec:separation}
+
+    Proposition~\ref{prop:cv} fixes only the relative dispersion of the square-root masses.
+    It does not determine which generation is light.
+    In the cyclic parametrisation
+    \begin{equation}
+      \label{eq:cyclic}
+      r_g = \bar r \left( 1 + \sqrt2 \, \cos\!\left( \delta + \frac{2\pi g}{3} \right) \right),
+      \qquad g = 0, 1, 2,
+    \end{equation}
+    the condition $Q_\ell = 2/3$ fixes the amplitude to $\sqrt2$ for every phase $\delta$ (the three equally spaced
+    cosines have vanishing sum and mean square $1/2$, so $\sigma_r/\bar r = 1$ identically), while $\delta$ places
+    the three generations relative to the nodes of the square-root profile.
+    Because the amplitude exceeds unity, $1 + \sqrt2 \cos\phi$ has real zeros at $\cos\phi = -1/\sqrt2$, i.e.\ at
+    $\phi = 135^\circ$ and $\phi = 225^\circ$.
+    The large hierarchy arises when one generation lies close to such a node: for the observed masses the electron
+    phase sits about $2.6^\circ$ from the $135^\circ$ node, so $\sqrt{m_e}$ is nearly annulled by interference.
+    The additive-to-multiplicative bridge is logarithmic: $\ln m_g = 2 \ln\lvert 1 + \sqrt2 \cos\phi_g \rvert$ is
+    smooth in the phase except for a logarithmic divergence at the nodes, so
+    $\ln(m_\tau/m_e) \simeq -2 \ln(\text{node distance}) + O(1)$.
+    The same fact explains the unequal steps: the $\mu/e$ step is steep because $e$ is near a node, while the
+    $\tau/\mu$ step is mild because $\mu$ and $\tau$ are both off-node.
+
+    \begin{remark}[Two independent targets]
+      \label{rem:targets}
+      The charged-lepton problem separates cleanly.
+      The Koide relation is the dispersion target $\CV(\rl) = 1$; the concrete hierarchy is the phase statement
+      that $\delta$ places one generation near a node.
+      The first is scale-free and blind to which generation is light; the second is the residual order that
+      selects the electron.
+      A candidate mechanism should be tested against $\CV(\rl) = 1$ first, and against the node placement second.
+      The two targets are not of equal difficulty.
+      The dispersion target $\CV = 1$ is a single scale-free number with a plausible entropic reading
+      (Section~\ref{sec:maxent}); the node target is a fine placement of one phase against a zero of the
+      square-root profile, and near a node the mass ratio is exponentially sensitive to that placement, so
+      ``why $\delta$ sets the electron at the node'' is very likely the harder problem and is where the genuine
+      residue of the charged-lepton hierarchy lives.
+      This note fixes the easier, scale-free target and defers the hard one; it does not claim the hard one is
+      close.
+    \end{remark}
+
+  \section{The cascade-ladder obstruction}
+    \label{sec:ladder}
+
+    The projected generation levels of the sub-programme are the eigenvalues of the squared projective residue on
+    the gauge-singlet triplet $\Cgen$, in the normal form
+    $(1, \tfrac12 + u, \tfrac12 - u)$ fixed by the Schur reduction with the even sector closed by Born--Infeld
+    parity~\cite{Beau2026prs, Beau2026a34, Beau2026pyl}.
+    This ladder has a bounded dispersion, independently of the split $u$.
+
+    \begin{proposition}[Cascade-ladder bound]
+      \label{prop:ladder}
+      For the pinned ladder $(1, \tfrac12 + u, \tfrac12 - u)$ with $u \in [0, \tfrac12)$, read as either masses or
+      square-root masses, the coefficient of variation satisfies $\CV \le 1/\sqrt2$, hence $Q \le 1/2$, with
+      equality only at the singular endpoint $(1,1,0)$.
+    \end{proposition}
+
+    \begin{proof}
+      The top eigenvalue is pinned at $1$ and the lower pair is centred at $1/2$.
+      Within the admissible interval $[0,1]$ the dispersion is maximised by pushing the lower pair to the endpoint,
+      i.e.\ $u \to 1/2$, giving $(1,1,0)$; there $\bar r = 2/3$, $\sigma_r^2 = 2/9$, so $\CV = 1/\sqrt2$ and, by
+      Proposition~\ref{prop:cv}, $Q = 1/2$.
+      Any larger value would require an eigenvalue above $1$ or a displacement of the lower-pair centre away from
+      $1/2$, neither of which is available in the even cascade sector $\operatorname{diag}(1, \tfrac12, \tfrac12)$.
+    \end{proof}
+
+    The bound is a property of this specific pinned ladder, not of $\mathbb Z_2$-symmetric triples in general.
+    It is stronger than the observation that the middle weight $xy$ carries no Veronese root: the carrier cannot
+    generate unit dispersion for the square-root masses at all.
+    The mass carrier committed by the sub-programme sharpens this.
+    The projected Yukawa operator has hermitian square
+    $H_\Pi = \lambda_Y^2 \operatorname{diag}(1, \tfrac12 + u, \tfrac12 - u)$ with a single overall norm
+    $\lambda_Y$, and its CP-symmetric form is $H_\Pi^{1/2} = \lambda_Y \operatorname{diag}(1, \sqrt{\tfrac12 + u},
+    \sqrt{\tfrac12 - u})$~\cite{Beau2026pyo}.
+    At the dictionary value $u = 1/10$ (levels $1 : 3/5 : 2/5$), every consistent reading of $\sqrt m$ gives
+    $\CV(\rl) \in [0.09, 0.37]$, far below unity, and $\lambda_Y$ cancels in the coefficient of variation, so the
+    overall norm cannot lift it.
+    Equivalently, the corpus variational principle that fixes the split --- Born--Infeld saturation~\cite{Beau2026bim}
+    --- produces the ladder, whose dispersion class ($\CV \le 1/\sqrt2$) lies below the Koide target.
+
+  \section{Maximum-entropy interpretation}
+    \label{sec:maxent}
+
+    The value $\CV = 1$, i.e.\ $\sigma_r = \bar r$, is the coefficient of variation of the exponential distribution,
+    the maximum-entropy distribution on $\mathbb R_+$ at fixed mean.
+    The Koide relation can therefore be read as the statement that the square-root masses carry the relative
+    dispersion of a maximum-entropy positive variable at fixed mean.
+    Unlike a change of carrier, this is a variational principle rather than a numerical coincidence, and the
+    projective framework contains exactly one forced entropic object, the projection entropy $\SPi > 0$ of the
+    non-injective projection~\cite{Beau2026l}.
+    As defined, however, $\SPi = -\sum_{o} \nu(o) \log \nu(o)$ is the Shannon entropy of the pushforward measure
+    $\nu$ on the observable space, and the corpus result is its positivity, not a variational extremum over the
+    square-root masses~\cite{Beau2026l}; a maximum-entropy \emph{principle} on $\rl$ would have to be supplied, by
+    $\SPi$ upgraded to an extremal law over the square-root masses or by a variational spectral entropy acting on
+    the same spectral sector.
+
+    \paragraph{The crux is not the entropy but the constraint.}
+    The discriminant between derivation and restatement is not the existence of an entropy but the choice of the
+    constraint held fixed, because $\CV = 1$ is selected by \emph{one specific} single-constraint problem.
+    For a positive variable, the maximum-entropy coefficient of variation depends on which datum is fixed:
+    \begin{center}
+      \begin{tabular}{lll}
+        \hline
+        constraint held fixed & maximum-entropy law & $\CV$ \ ($Q = (1+\CV^2)/3$) \\
+        \hline
+        first moment $\langle \sqrt m \rangle$ (scale) & exponential & $1.000$ \ ($Q = 2/3$, Koide) \\
+        second moment $\langle m \rangle$ (norm) & half-normal & $0.756$ \ ($Q \simeq 0.52$) \\
+        support $[0,B]$ only & uniform & $0.577$ \ ($Q \simeq 0.44$) \\
+        \hline
+      \end{tabular}
+    \end{center}
+    Only the \emph{first-moment} constraint gives $\CV = 1$.
+    This is the sharp point: the structurally natural conserved quantity of an amplitude is its quadratic norm
+    $\langle m \rangle = \sum_g (\sqrt{m_g})^2$, and fixing \emph{that} yields the half-normal value $\CV = 0.756$,
+    not Koide.
+    Reaching $\CV = 1$ requires fixing instead the \emph{linear} sum $\langle \sqrt m \rangle = \tfrac13 \sum_g
+    \sqrt{m_g}$ and nothing else --- not the variance, not the support.
+    Why the mean alone, and why the linear sum rather than the norm, is the entire content of the open test; it is
+    not self-evident.
+
+    \paragraph{A structural hook, and where it says not to look.}
+    One feature of the projection would make the first-moment constraint natural: the non-injective pushforward
+    combines fibre content \emph{linearly}, $\nu(o) = \sum_{\omega \in \Pi^{-1}(o)} \mu(\omega)$~\cite{Beau2026l}.
+    If the square-root mass $\sqrt{m_g}$ is identified with such a linearly summed fibre content, then the total
+    $\sum_g \sqrt{m_g}$ is the conserved datum and the first-moment (mean-only) constraint is forced, giving
+    $\CV = 1$.
+    This is the precise, checkable form of the open test, and it is the same identification question that decides
+    whether $\SPi$ acts on $\rl$ at all.
+    It also fixes where \emph{not} to look, by tension with Proposition~\ref{prop:ladder}: the committed Yukawa
+    carrier fixes both the scale $\lambda_Y$ (the mean) and the level dispersion $u$ (the variance), i.e.\ it fixes
+    mean \emph{and} variance and lands at $\CV \le 1/\sqrt2$.
+    A maximum-entropy object with the mean alone fixed is therefore \emph{not} the cascade-ladder eigenvalue
+    vector, whose dispersion is separately pinned; it must be a distinct object --- a linearly summed fibre
+    amplitude, scale-fixed and dispersion-free.
+    Thus the two statements combine into a definite negative: the maximum-entropy carrier of $\CV = 1$ cannot be
+    the square-root of the projected level ladder.
+
+    \paragraph{The true lock: the discrete-to-continuous bridge.}
+    Even granting the first-moment constraint, the value $\CV = 1$ does not follow for three discrete masses.
+    Unit coefficient of variation is a property of the continuous exponential density; three discrete square-root
+    masses do not inherit it, and two facts make this precise.
+    First, maximising the Shannon entropy of the three weights $p_g = \sqrt{m_g} / \sum_h \sqrt{m_h}$ at fixed
+    normalisation gives the uniform distribution $p_g = 1/3$, hence equal square-root masses and $\CV = 0$: the
+    degenerate case, the opposite of Koide.
+    Second, natural three-point realisations of the maximum-entropy exponential are recipe-dependent and none is
+    pinned at unity: its tercile conditional means give $\CV \simeq 0.81$, its $\{1/6, 1/2, 5/6\}$ quantiles give
+    $\CV \simeq 0.76$, and the expected sample coefficient of variation of three independent draws is
+    $\simeq 0.65$.
+    The continuous unit dispersion therefore does not transfer to three values by any canonical discretisation.
+    The genuine open question, one level below the constraint question above, is whether there is a forced
+    underlying continuous generation coordinate --- exponential by maximum entropy at fixed
+    $\langle \sqrt m \rangle$ --- of which the three generations are forced realisations whose discrete coefficient
+    of variation is exactly $1$.
+    Absent such a forced bridge, unit dispersion is a target invariant, not a derivation.
+
+    \paragraph{Status of the route.}
+    The route is open but now sharply located.
+    Its constraint side is the first-moment condition: the projection must fix the linear sum $\sum_g \sqrt{m_g}$
+    alone, since the structurally natural quadratic norm gives instead $\CV = 0.756$.
+    Its deeper side is the discrete-to-continuous bridge above, which the constraint condition does not close.
+    A derivation requires both; if either is chosen by hand, unit dispersion remains a restatement of Koide rather
+    than a consequence of the projection.
+
+  \section{Status and open test}
+    \label{sec:status}
+
+    This note does not derive the charged-lepton masses.
+    Its purpose is to isolate the intrinsic shape constraint carried by the charged-lepton Koide relation and to
+    express it as a unit coefficient-of-variation condition on the square-root mass vector.
+    The result is a target invariant for the fermionic-mass sector, not a mass formula.
+
+    The status is fourfold.
+    The reformulation $Q_\ell = (1 + \CV(\rl)^2)/3$ and the equivalence $Q_\ell = 2/3 \iff \CV(\rl) = 1$ are exact
+    (Proposition~\ref{prop:cv}).
+    The cascade-ladder obstruction $\CV \le 1/\sqrt2$ is exact for the pinned ladder
+    (Proposition~\ref{prop:ladder}), and the committed Yukawa carrier gives $\CV(\rl) \in [0.09, 0.37]$, so the
+    observed unit dispersion is reached by no presently named mechanism of the projective cascade.
+    The maximum-entropy reading is an open test, and its crux is the constraint, not the entropy: $\CV = 1$ is
+    selected only by a first-moment (mean-only) condition on $\sqrt m$, whereas the natural quadratic norm gives
+    $\CV = 0.756$; the route is forced only if the projection fixes the linear sum $\sum_g \sqrt{m_g}$ alone, on a
+    linearly summed fibre observable, and this cannot be the level-ladder eigenvalue vector (whose variance is
+    separately pinned).
+    A deeper lock sits below this constraint question: unit dispersion is a property of the continuous exponential,
+    and three discrete masses do not inherit it (the discrete-weight extremum is uniform, giving $\CV = 0$), so a
+    forced continuous-to-discrete bridge, not merely the constraint, is required for a derivation.
+    Finally, the concrete hierarchy --- the node placement fixed by the phase $\delta$ --- is deferred and is
+    almost certainly the harder problem, since it requires a fine, exponentially sensitive placement of one
+    generation against a zero of the square-root profile; it is where the genuine residue of the charged-lepton
+    hierarchy remains.
+    The clean statement of the easy target --- unit relative dispersion of the square-root masses --- is the
+    working conclusion; the mechanism that would force it, and the harder phase problem, are open.
+
+  \newpage
+
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography}
+
+\end{document}
