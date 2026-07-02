@@ -122,13 +122,36 @@ Independent Researcher, France\\
     \end{proof}
 
     Numerically, with the pole-mass square roots $\rl = (0.715, 10.28, 42.15)$ (in $\mathrm{MeV}^{1/2}$), one finds
-    $\bar r = 17.716$, $\sigma_r = 17.715$, hence $\CV(\rl) = 0.99999$ and $Q_\ell = 0.666661$.
-    The charged-lepton square-root mass vector has unit relative dispersion to five digits.
+    $\bar r = 17.716$, $\sigma_r = 17.715$, hence $\CV(\rl) = 0.999991$ and $Q_\ell = 0.666661$.
+    Propagating the mass uncertainties (dominated by $m_\tau = 1776.86 \pm 0.12\,\mathrm{MeV}$) gives
+    $\CV(\rl) = 0.99999 \pm 0.00001$, so $\CV = 1$ (equivalently $Q_\ell = 2/3$) is consistent with the data at
+    $0.9\sigma$: the charged-lepton square-root mass vector has unit relative dispersion at the $10^{-5}$ level,
+    limited by $m_\tau$ --- consistent with exact, not established as exact.
     Equation~\eqref{eq:cv-unit} is the sharpest scale-free statement of the relation: rather than ``why $3477$'' or
     ``why $45^\circ$'', the content is that the standard deviation of the square-root masses equals their mean.
     The value $Q_\ell$ is monotone in $\CV$ across the admissible interval $\CV \in [0, \sqrt2]$: $\CV = 0$ is the
     degenerate limit ($Q = 1/3$), $\CV = \sqrt2$ is the one-mass-dominant limit ($Q = 1$), and $\CV = 1$ is the
     Koide midpoint ($Q = 2/3$).
+
+    \begin{remark}[Robustness and scope]
+      \label{rem:robustness}
+      Three qualifications fix the status of the equality.
+      (i) \emph{Precision.} $\CV = 1$ holds at the $10^{-5}$ level and is consistent with exact at $0.9\sigma$, the
+      precision limited by $m_\tau$; the tau mass making $\CV = 1$ exact is $1776.97\,\mathrm{MeV}$, within the
+      measured $1776.86 \pm 0.12$.
+      It is a robust near-equality consistent with exact, not a theorem that it is exact.
+      (ii) \emph{Renormalisation scale.} $\CV = 1$ is an infrared (pole-mass) statement, not an RG invariant: the
+      running masses at $M_Z$ give $\CV \simeq 1.002$.
+      It is, however, invariant under any \emph{flavour-universal} rescaling of $\sqrt m$ (both $\sigma_r$ and
+      $\bar r$ scale together), so the leading flavour-blind QED running leaves it exactly fixed and the small
+      drift to $M_Z$ is a purely flavour-dependent (threshold, scheme) effect.
+      Here ``scale-free'' means dimensionless, not RG-invariant.
+      (iii) \emph{Sector specificity.} $\CV = 1$ is specific to the charged leptons; the quark sectors sit away
+      from it (indicatively $\CV \simeq 1.09$ down-type, $\CV \simeq 1.24$ up-type, both scheme- and
+      scale-dependent), and the neutrino $\CV$ is undefined without the absolute mass scale.
+      A mechanism forcing $\CV = 1$ must therefore act at the infrared scale and be specific to the charged-lepton
+      sector.
+    \end{remark}
 
   \section{Separation between dispersion and hierarchy}
     \label{sec:separation}
@@ -146,8 +169,23 @@ Independent Researcher, France\\
     the three generations relative to the nodes of the square-root profile.
     Because the amplitude exceeds unity, $1 + \sqrt2 \cos\phi$ has real zeros at $\cos\phi = -1/\sqrt2$, i.e.\ at
     $\phi = 135^\circ$ and $\phi = 225^\circ$.
-    The large hierarchy arises when one generation lies close to such a node: for the observed masses the electron
-    phase sits about $2.6^\circ$ from the $135^\circ$ node, so $\sqrt{m_e}$ is nearly annulled by interference.
+    The large hierarchy arises when one generation lies close to such a node.
+    For the observed charged-lepton pole masses, the electron phase lies about $2.27^\circ$ from the $135^\circ$
+    node, so $\sqrt{m_e}$ is nearly annulled by interference.
+    Equivalently, the small angular offset is
+    \begin{equation}
+      \label{eq:eps-e}
+      \varepsilon_e \simeq 3.96 \times 10^{-2}\ \mathrm{rad}.
+    \end{equation}
+    Near the node the square-root profile is linear in the angular offset, so
+    \begin{equation}
+      \label{eq:nodal}
+      \sqrt{m_e} \simeq \bar r\,\varepsilon_e, \qquad m_e \simeq \bar r^2\,\varepsilon_e^2 .
+    \end{equation}
+    The hierarchy is therefore a nodal suppression: a small phase displacement is converted into a quadratic
+    suppression of the lightest mass.
+    This statement does not identify $\varepsilon_e$ with a known coupling constant; it records only the robust
+    near-node mechanism.
     The additive-to-multiplicative bridge is logarithmic: $\ln m_g = 2 \ln\lvert 1 + \sqrt2 \cos\phi_g \rvert$ is
     smooth in the phase except for a logarithmic divergence at the nodes, so
     $\ln(m_\tau/m_e) \simeq -2 \ln(\text{node distance}) + O(1)$.
@@ -171,6 +209,75 @@ Independent Researcher, France\\
       This note fixes the easier, scale-free target and defers the hard one; it does not claim the hard one is
       close.
     \end{remark}
+
+    \paragraph{Physical picture: one three-phase wave, symmetric versus broken.}
+      Equation~\eqref{eq:cyclic} invites a wave reading: the three generations are three equally spaced phases,
+      $2\pi/3$ apart, sampled from one profile $1 + \sqrt2 \cos\phi$.
+      In this language the two targets acquire a physical meaning.
+      The dispersion $\CV = 1$ is the \emph{modulation depth} of the wave (amplitude $\sqrt2$), a single universal
+      number blind to which generation is light.
+      The hierarchy is \emph{interference}: the electron is small not because a factor crushes it, but because its
+      phase falls near a dark fringe (a node), where the square-root amplitude nearly vanishes.
+      The same three-phase skeleton then admits distinct projective regimes:
+      \begin{center}
+        \begin{tabular}{lll}
+          \hline
+          wave regime & projection & phenomenon \\
+          \hline
+          exactly equilateral phases & indiscernible classes & confined colour \\
+          slightly imbalanced phases & discernible classes & massive generations \\
+          one phase near a node & amplitude nearly annulled & electron smallness \\
+          \hline
+        \end{tabular}
+      \end{center}
+      In the exactly symmetric regime the three phases form a perfect $120^\circ$ triad with vanishing sum
+      ($1 + \omega + \omega^2 = 0$): the three classes are indiscernible and none can be isolated~---~the structure
+      of an unbroken colour triplet, whose non-observability as three separate charges is the confinement already
+      carried by the non-injective colour projection of ENI~\cite{Beau2026l}.
+      In the broken regime the phases are displaced off the perfect triad, the three amplitudes separate, and one
+      reads three distinct masses.
+      Confinement and the mass hierarchy would then be two faces of one three-phase wave: symmetric $\Rightarrow$
+      colour (confined, never three values), broken $\Rightarrow$ generations (observed, three masses).
+      This picture is heuristic.
+      It explains the \emph{form} of the problem~---~why three, why the vanishing sum, why the electron is small
+      (interference)~---~but not the \emph{values}: it fixes neither the modulation depth $\sqrt2$ nor the node
+      phase $\delta$.
+      Two cautions keep it honest.
+      First, identifying the colour triad and the generation triad as one and the same wave is a non-standard
+      step: in the Standard Model colour (a gauge triplet within one generation) and the generation index are
+      independent.
+      Second, the hard content stays exactly where Remark~\ref{rem:targets} places it, the fine node placement;
+      and in the quantum-mechanical analogy the wave reading invokes, what is still missing is the operator or
+      interaction that would \emph{force} the continuous phase profile to resolve into exactly three observed
+      values with unit dispersion.
+      In this picture the two open targets read as a \emph{form lock} and a \emph{placement lock}.
+      The form lock is the modulation depth $A = \sqrt2$, and it is \emph{not} a condition separate from the Koide
+      angle.
+      Writing $\theta$ for the angle between $\rl$ and the democratic axis $(1,1,1)$, the three cosines
+      $120^\circ$ apart have $\langle \cos^2 \rangle = 1/2$, so the oscillating part has effective size $A/\sqrt2$
+      and
+      \begin{equation}
+        \label{eq:tan-theta}
+        \begin{gathered}
+          \tan\theta = \frac{\lVert \text{oscillating} \rVert}{\lVert \text{democratic} \rVert}
+          = \frac{A}{\sqrt2} = \CV, \\[2pt]
+          A = \sqrt2 \iff \CV = 1 \iff \tan\theta = 1 \iff \theta = 45^\circ .
+        \end{gathered}
+      \end{equation}
+      The amplitude $\sqrt2$, the Koide angle $45^\circ$, and $\CV = 1$ are thus three writings of one content:
+      the $\sqrt2$ is the natural three-phase factor (from $\langle \cos^2 \rangle = 1/2$), and the sole real
+      condition is that the \emph{differentiating} (oscillating, generation-splitting) component of $\rl$ has
+      exactly the same norm as its \emph{common} (democratic) component~---~a singlet--doublet equipartition.
+      The form lock is therefore one question, not two: why does the projection place the
+      generation-differentiation component exactly at parity with the democratic component?
+      This is plausibly a global principle~---~entropy, saturation, equipartition, or a projective normalisation
+      constraint.
+      The phase $\delta$ (why the electron sits at the node) is the placement lock, more singular and fragile,
+      since near a zero a small angular change produces a large mass ratio.
+      The proposed bridge is stated cautiously, and this is its canonical form: \emph{not} that colour and
+      generation are identical indices, but that they may be two projective regimes of the same three-phase
+      carrier~---~exact equilateral phase gives confined colour, while broken phase gives observable generations
+      and the mass hierarchy.
 
   \section{The cascade-ladder obstruction}
     \label{sec:ladder}
@@ -285,6 +392,12 @@ Independent Researcher, France\\
     $\langle \sqrt m \rangle$ --- of which the three generations are forced realisations whose discrete coefficient
     of variation is exactly $1$.
     Absent such a forced bridge, unit dispersion is a target invariant, not a derivation.
+    This obstruction, however, is specific to the present max-entropy route, in which $\CV = 1$ is read off a
+    continuous probability density.
+    A route that imposes unit dispersion directly on the discrete triple --- for instance as the singlet--doublet
+    equipartition of the cyclic form~\eqref{eq:cyclic}, where three phases $120^\circ$ apart inherit the
+    amplitude-fixed dispersion exactly and independently of the phase $\delta$ --- does not incur this transfer, and
+    relocates the lock to the amplitude (equipartition) condition itself.
 
     \paragraph{Status of the route.}
     The route is open but now sharply located.
@@ -313,9 +426,12 @@ Independent Researcher, France\\
     $\CV = 0.756$; the route is forced only if the projection fixes the linear sum $\sum_g \sqrt{m_g}$ alone, on a
     linearly summed fibre observable, and this cannot be the level-ladder eigenvalue vector (whose variance is
     separately pinned).
-    A deeper lock sits below this constraint question: unit dispersion is a property of the continuous exponential,
-    and three discrete masses do not inherit it (the discrete-weight extremum is uniform, giving $\CV = 0$), so a
-    forced continuous-to-discrete bridge, not merely the constraint, is required for a derivation.
+    A deeper lock sits below this constraint question, specific to the max-entropy route: unit dispersion is a
+    property of the continuous exponential, and three discrete masses do not inherit it (the discrete-weight
+    extremum is uniform, giving $\CV = 0$), so a forced continuous-to-discrete bridge, not merely the constraint, is
+    required for a derivation; a route that fixes unit dispersion directly on the discrete triple, as the
+    singlet--doublet equipartition of the cyclic form~\eqref{eq:cyclic}, avoids this transfer and relocates the lock
+    to the amplitude condition.
     Finally, the concrete hierarchy --- the node placement fixed by the phase $\delta$ --- is deferred and is
     almost certainly the harder problem, since it requires a fine, exponentially sensitive placement of one
     generation against a zero of the square-root profile; it is where the genuine residue of the charged-lepton
