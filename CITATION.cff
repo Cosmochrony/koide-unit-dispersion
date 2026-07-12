@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you cite this work, please use the metadata from this file."
+title: "The Charged-Lepton Koide Relation as a Unit-Dispersion Constraint"
+type: software
+authors:
+  - family-names: "Beau"
+    given-names: "Jérôme"
+repository-code: "https://github.com/Cosmochrony/koide-unit-dispersion"
+url: "https://cosmochrony.org/science/fermionic-matter/koide-unit-dispersion/"
+version: "1.3"
+doi: "10.5281/zenodo.21109812"
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "The Charged-Lepton Koide Relation as a Unit-Dispersion Constraint"
+  authors:
+    - family-names: "Beau"
+      given-names: "Jérôme"
+  year: 2026
+  doi: "10.5281/zenodo.21109812"
+  url: "https://doi.org/10.5281/zenodo.21109812"
