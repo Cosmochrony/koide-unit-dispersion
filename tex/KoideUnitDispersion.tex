@@ -421,6 +421,144 @@ Independent Researcher, France\\
     A derivation requires both; if either is chosen by hand, unit dispersion remains a restatement of Koide rather
     than a consequence of the projection.
 
+  \section{No-go for a linear self-adjoint determinant realisation}
+    \label{sec:determinant-nogo}
+
+    The discrete cyclic route isolates the Koide condition as equality between the democratic and differentiating
+    components of the square-root mass vector.
+    This section tests one concrete way in which a joint projected determinant might force that equality.
+    The test is deliberately restricted to an amplitude map that is real-linear and self-adjoint in the positive
+    Hermitian structure inherited by the projected spinor bundle.
+
+    Let
+    \begin{equation}
+      \label{eq:sd-decomposition}
+      \rl = r_S + r_D,
+      \qquad
+      r_S \in S := \operatorname{span}(\mathbf 1),
+      \qquad
+      r_D \in D := S^\perp,
+    \end{equation}
+    and write
+    \begin{equation}
+      \label{eq:sd-quadratic-form}
+      s := \lVert r_S\rVert,
+      \qquad
+      d := \lVert r_D\rVert,
+      \qquad
+      Q(\rl) := s^2-d^2.
+    \end{equation}
+    By Proposition~\ref{prop:cv}, $\CV(\rl)=d/s$, so the Koide locus is exactly $Q(\rl)=0$.
+
+    \begin{theorem}[Linear self-adjoint determinant no-go]
+      \label{thm:linear-determinant-nogo}
+      Let $\mathcal H$ be a complex Hilbert space with positive Hermitian inner product, and let
+      $P\in\operatorname{End}(\mathcal H)$ be a non-zero orthogonal projector.
+      There is no real-linear map
+      \[
+        \Phi:S\oplus D\longrightarrow\operatorname{End}(P\mathcal H)
+      \]
+      such that $\Phi(x)$ is self-adjoint for every $x\in S\oplus D$ and
+      \begin{equation}
+        \label{eq:phi-square}
+        \Phi(x)^2=Q(x)\,\operatorname{id}_{P\mathcal H}
+      \end{equation}
+      for every $x\in S\oplus D$.
+      Equivalently, after extension by zero to $\mathcal H$, the right-hand side is $Q(x)P$.
+    \end{theorem}
+
+    \begin{proof}
+      Real-linearity and Equation~\eqref{eq:phi-square} imply, by polarisation,
+      \begin{equation}
+        \label{eq:clifford-polarisation}
+        \Phi(x)\Phi(y)+\Phi(y)\Phi(x)
+        =2B_Q(x,y)\,\operatorname{id}_{P\mathcal H},
+      \end{equation}
+      where $B_Q$ is the symmetric bilinear form associated with $Q$.
+      Thus $\Phi$ would define a Clifford action for the signature-$(1,2)$ form $Q$ on the non-zero block
+      $P\mathcal H$.
+      Now choose any non-zero $v\in D$.
+      Equation~\eqref{eq:phi-square} gives
+      \[
+        \Phi(v)^2=-\lVert v\rVert^2\operatorname{id}_{P\mathcal H}.
+      \]
+      Since $\Phi(v)$ is self-adjoint, $\Phi(v)^2$ is positive semidefinite.
+      The right-hand side is strictly negative on $P\mathcal H$, because $P\neq0$ and $v\neq0$.
+      This is a contradiction.
+    \end{proof}
+
+    \begin{corollary}[Positive Laplace-type determinant obstruction]
+      \label{cor:positive-determinant-obstruction}
+      The Koide radicand $s^2-d^2$ cannot arise through Equation~\eqref{eq:phi-square} from a real-linear
+      self-adjoint amplitude endomorphism inside an ordinary positive Laplace-type projected determinant.
+    \end{corollary}
+
+    \begin{proof}
+      A self-adjoint amplitude endomorphism in the inherited positive Hermitian structure satisfies the hypotheses
+      of Theorem~\ref{thm:linear-determinant-nogo} on every non-zero invariant block on which
+      Equation~\eqref{eq:phi-square} is asserted.
+    \end{proof}
+
+    \subsection{Why the Q14 difference of squares does not evade the theorem}
+      \label{subsec:q14-near-miss}
+
+      The projected Dirac construction of Q14~\cite{Beau2026q14} contains an exact algebraic near miss.
+      On the outer generation doublet, the real $J_\Pi$-odd endomorphism of Q14 has the form
+      \begin{equation}
+        \label{eq:q14-block}
+        T(a,b)
+        =
+        \begin{pmatrix}
+          a & b \\
+          -b & -a
+        \end{pmatrix}
+        =aJ_3+bR_{\mathrm{mix}},
+        \qquad
+        T(a,b)^2=(a^2-b^2)\mathbf 1 .
+      \end{equation}
+      Here $a$ is the non-mixing $J_3$ split and $b$ is the outer-doublet rotation.
+      They are coordinates of an operator defect, not the norms $s$ and $d$ of
+      Equation~\eqref{eq:sd-quadratic-form}.
+      Identifying $(a,b)$ with $(s,d)$ would therefore insert the desired amplitude map rather than derive it.
+
+      The constructed real metaplectic cascade also removes the negative direction of this candidate:
+      the $R_{\mathrm{mix}}$ coefficient vanishes identically, so $b=0$~\cite{Beau2026prs}.
+      The projected-Yukawa analysis further shows that the external $R_{\mathrm{mix}}$ block is not sourced by a
+      single $\operatorname{Sym}^2(\mathfrak{sl}_2)$ cascade and would require an additional tower
+      datum~\cite{Beau2026pyo}.
+      Finally, $T(a,b)$ is not self-adjoint for $b\neq0$ in the inherited positive Hermitian structure.
+      Its positive square instead satisfies
+      \begin{equation}
+        \label{eq:q14-positive-square}
+        \operatorname{tr}(T^\dagger T)=2(a^2+b^2),
+        \qquad
+        \det(T^\dagger T)=(a^2-b^2)^2.
+      \end{equation}
+      The squared determinant retains the contact locus $a^2=b^2$, but it loses the sign that distinguishes the
+      two sides of the corresponding cone.
+      It therefore supplies neither a native identification with $(s,d)$ nor an admissibility inequality selecting
+      the Koide side.
+
+    \subsection{Scope and remaining routes}
+      \label{subsec:determinant-nogo-scope}
+
+      Theorem~\ref{thm:linear-determinant-nogo} is a scoped no-go, not an absolute impossibility theorem.
+      It excludes exactly the real-linear, self-adjoint realisation in the positive Hermitian structure of the
+      presently constructed corpus.
+      A non-linear amplitude map is not subject to the polarisation argument.
+      Allowing anti-Hermitian doublet generators, or replacing the positive inner product by a Krein structure,
+      evades the positivity contradiction but introduces an indefinite structure not derived on $\Cgen$.
+      Q14 distinguishes the Lorentzian tangent image from the generation-multiplicity image, while $J_\Pi$ supplies
+      an anti-linear reality structure rather than an indefinite generation metric~\cite{Beau2026q14}.
+
+      An enlarged tower sourcing $R_{\mathrm{mix}}$ is therefore only a possible location for new operator data,
+      not a completion of the Koide mechanism.
+      Such an extension would still have to derive the amplitude-to-operator map, the indefinite structure, the
+      uniqueness of $s^2-d^2$ at the relevant determinant order, stability under independent matching
+      coefficients, the behaviour of the prime determinant at the contact locus, and the selection of charged
+      leptons rather than neutrinos.
+      None of these structures is presently constructed.
+
   \section{Status and open test}
     \label{sec:status}
 
@@ -449,6 +587,13 @@ Independent Researcher, France\\
     required for a derivation; a route that fixes unit dispersion directly on the discrete triple, as the
     singlet--doublet equipartition of the cyclic form~\eqref{eq:cyclic}, avoids this transfer and relocates the lock
     to the amplitude condition.
+    One concrete realisation of that discrete route is now closed:
+    Section~\ref{sec:determinant-nogo} proves that no real-linear self-adjoint amplitude map in the inherited
+    positive Hermitian structure can square to $(s^2-d^2)P$ on a non-zero projected block.
+    This does not close the discrete equipartition route itself.
+    The type-saturation arena, the continuous maximum-entropy test, and non-linear, Krein, or enlarged-tower
+    extensions remain open, subject to the independent construction requirements of
+    Subsection~\ref{subsec:determinant-nogo-scope}.
     Finally, the concrete hierarchy --- the node placement fixed by the phase $\delta$ --- is deferred and is
     almost certainly the harder problem, since it requires a fine, exponentially sensitive placement of one
     generation against a zero of the square-root profile; it is where the genuine residue of the charged-lepton
