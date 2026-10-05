@@ -4,7 +4,7 @@ J. Beau, Independent Researcher, France
 
 ## Status
 
-Preprint, v1.0. Concept DOI: [10.5281/zenodo.21109812](https://doi.org/10.5281/zenodo.21109812)
+Working paper, v1.5 (local candidate; last deposited version 1.4). Concept DOI: [10.5281/zenodo.21109812](https://doi.org/10.5281/zenodo.21109812)
 
 Source note (reconnaissance): it fixes a target invariant for the charged-lepton mass sector; it does
 not derive the masses.
@@ -34,10 +34,12 @@ target from the concrete hierarchy.
    dispersion $\mathrm{CV} = 1$ and the node placement — are independent, the node placement being the
    harder, exponentially sensitive residue.
 
-3. **Cascade-ladder obstruction.** The pinned ladder $(1, \tfrac12 + u, \tfrac12 - u)$ has
+3. **Cascade-ladder obstruction.** The ladder $(1, \tfrac12 + u, \tfrac12 - u)$, taken by hypothesis as a pinned
+   normal form of the generation levels, has
    $\mathrm{CV} \le 1/\sqrt2$ ($Q \le 1/2$); the committed Yukawa carrier $H_\Pi^{1/2}$ gives
    $\mathrm{CV}(r_\ell) \in [0.09, 0.37]$, with the single norm $\lambda_Y$ cancelling in $\mathrm{CV}$.
-   The maximum-entropy carrier of $\mathrm{CV} = 1$ cannot be the square root of the level ladder.
+   Under that pinned-ladder hypothesis, the maximum-entropy carrier of $\mathrm{CV} = 1$ cannot be the square root of
+   the level ladder.
 
 4. **Maximum-entropy reading (open test).** $\mathrm{CV} = 1$ is the unit dispersion of the exponential
    (maximum entropy on $\mathbb{R}_+$ at fixed mean). The crux is the constraint — only a first-moment
@@ -49,7 +51,7 @@ target from the concrete hierarchy.
 ## Position in the programme
 
 This note belongs to the **fermionic matter sub-programme**. It is downstream of the **Projected Yukawa
-Line** (PYL) and **Projected Yukawa Operator** (PYO) notes, whose generation-level ladder it shows to
+Line** (PYL) and **Projected Yukawa Operator** (PYO) notes, whose generation-level ladder (taken by hypothesis) it shows to
 under-disperse, and it points the entropic reading at the projection entropy of the non-injective
 projection (ENI). It records a target invariant, not a mass formula.
 
