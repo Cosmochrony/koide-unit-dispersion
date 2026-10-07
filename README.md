@@ -4,7 +4,7 @@ J. Beau, Independent Researcher, France
 
 ## Status
 
-Working paper, v1.5 (local candidate; last deposited version 1.4). Concept DOI: [10.5281/zenodo.21109812](https://doi.org/10.5281/zenodo.21109812)
+Working paper, v1.5. Concept DOI: [10.5281/zenodo.21109812](https://doi.org/10.5281/zenodo.21109812)
 
 Source note (reconnaissance): it fixes a target invariant for the charged-lepton mass sector; it does
 not derive the masses.
