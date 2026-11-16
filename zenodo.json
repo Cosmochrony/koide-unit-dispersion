@@ -4,5 +4,6 @@
   "publication_type": "workingpaper",
   "main_tex": "tex/KoideUnitDispersion.tex",
   "zenodo_id": 21109812,
-  "doi": "10.5281/zenodo.21109812"
+  "doi": "10.5281/zenodo.21109812",
+  "notes": "Version 1.6 aligns the one sentence that imports ENI's colour reading with ENI version 2.9. ENI supplies only a conditional constraint: a projection onto colour-neutral observables is non-injective; it takes colour neutrality as a premise and does not derive the non-observability of separate colour charges. The heuristic three-phase picture, its status and every other statement are unchanged."
 }
